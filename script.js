@@ -30,7 +30,7 @@ const fruits= [
     },
     {
         fruitId: 3,
-        fruitName: 'apel',
+        fruitName: 'Jeruk Bali',
         fruitType: 'IMPORT',
         stock : 50
     },
@@ -61,7 +61,16 @@ const fruits= [
 ]
 //No.1
 const BuahApaSaja = fruits.map(element => element.fruitName);
-console.log('Buah yang Dimiliki Andi: ' + BuahApaSaja);
+
+// Request dari Pak Adit
+function removeDuplicates(BuahApaSaja) {
+        return BuahApaSaja.filter((item, 
+            index) => BuahApaSaja.indexOf(item) === index);
+    }
+  
+    console.log(removeDuplicates(BuahApaSaja));
+
+    console.log('Buah yang Dimiliki Andi: ' + BuahApaSaja);
 //No.2
 const groupInfo = fruits.reduce((groups, fruits) => {
     const {IMPORT = 0, LOCAL = 0} = groups;
